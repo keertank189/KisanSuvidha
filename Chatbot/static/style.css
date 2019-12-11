@@ -1,0 +1,144 @@
+body {
+    font-family: Garamond;
+}
+
+h1 {
+    color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+h3 {
+    color: black;
+    font-size: 20px;
+    margin-top: 3px;
+    text-align: center;
+}
+
+@font-face { font-family: robot-regular; 
+       src: url('/Roboto-Regular.ttf'); }
+
+
+@font-face { font-family: merriweather-sans; 
+       src: url('/Merriweather_Sans/MerriweatherSans-Regular.ttf'); }
+
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 180px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  max-height: 300px;
+  overflow-y: scroll;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 1px;
+  background-color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Set a style for the submit/send button */
+.form-container .button-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .button-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#chatbox {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    margin-top: 10px;
+}
+
+#userInput {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    margin-top: 70px;
+    
+}
+
+#textInput {
+    width: 87%;
+    border: none;
+    border-bottom: 3px solid #009688;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+}
+
+.userText {
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.userText span {
+    background-color: #009688;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.botText {
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.botText span {
+    background-color: #EF5350;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}

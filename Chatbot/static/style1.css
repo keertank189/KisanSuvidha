@@ -1,0 +1,127 @@
+body
+* {box-sizing: border-box;}
+
+@font-face { font-family: 'Merriweather Sans', sans-serif; 
+       src: url('/Roboto/Roboto-Regular.ttf'); }
+
+@font-face { font-family: merriweather-sans; 
+       src: url('/Merriweather_Sans/MerriweatherSans-Regular.ttf'); }
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+  width: 180px;
+  border-radius: 10px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  max-height: 700px;
+  max-width: 270px;
+  overflow-y: scroll;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #bfbfbf;
+  border-radius: 17px 52px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 1px;
+  background-color:#8080ff;
+
+  border-radius: 15px 50px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Set a style for the submit/send button */
+.form-container .button-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin:10px;
+  border-radius: 15px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .button-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#chatbox {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    margin-top: 10px;
+
+}
+
+#userInput {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    margin-top: 70px;
+    
+}
+
+#textInput {
+    width: 87%;
+    border: none;
+    border-bottom: 3px solid #009688;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-left: 13px;
+}
+
+.userText {
+    color:  #000000;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.userText span {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.botText {
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.botText span {
+    padding: 10px;
+    border-radius: 6px;
+}

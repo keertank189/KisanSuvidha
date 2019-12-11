@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<button class="open-button" onclick="openForm()" style="font-size: 15px">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <div class="form-container">
+    <div id="chatbox">
+    	<p class="botText"><span>Hi! I'm Chatterbot.</span></p>
+    </div>
+
+    <div id="userInput">
+    	<input id="textInput" type="text" name="msg" placeholder="Message">
+        <div class="button-container">
+    		<button type="submit" class="btn" id="buttonInput" style="font-size: 15px">Send</button>
+    		<button type="button" class="btn cancel" style="font-size: 15px" 
+            onclick="closeForm()">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<script>
+function getBotResponse() {
+  var rawText = $("#textInput").val();
+  var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+  $("#textInput").val("");
+  $("#chatbox").append(userHtml);
+  document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+  $.get("/get", { msg: rawText }).done(function(data) {
+    var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+    $("#chatbox").append(botHtml);
+    document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+  });
+}
+$("#textInput").keypress(function(e) {
+    if(e.which == 13) {
+        getBotResponse();
+    }
+});
+$("#buttonInput").click(function() {
+  getBotResponse();
+})
+</script>
+
+</body>
+</html>
+
